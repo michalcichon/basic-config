@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>ContentFilters</key>
+	<dict/>
+	<key>auto_connect</key>
+	<true/>
+	<key>data</key>
+	<dict>
+		<key>connection</key>
+		<dict>
+			<key>database</key>
+			<string>config</string>
+			<key>host</key>
+			<string>127.0.0.1</string>
+			<key>name</key>
+			<string>root@127.0.0.1</string>
+			<key>rdbms_type</key>
+			<string>mysql</string>
+			<key>sslCACertFileLocation</key>
+			<string></string>
+			<key>sslCACertFileLocationEnabled</key>
+			<integer>0</integer>
+			<key>sslCertificateFileLocation</key>
+			<string></string>
+			<key>sslCertificateFileLocationEnabled</key>
+			<integer>0</integer>
+			<key>sslKeyFileLocation</key>
+			<string></string>
+			<key>sslKeyFileLocationEnabled</key>
+			<integer>0</integer>
+			<key>type</key>
+			<string>SPTCPIPConnection</string>
+			<key>useSSL</key>
+			<integer>0</integer>
+			<key>user</key>
+			<string>root</string>
+		</dict>
+		<key>session</key>
+		<dict>
+			<key>connectionEncoding</key>
+			<string>utf8mb4</string>
+			<key>contentFilter</key>
+			<dict/>
+			<key>contentPageNumber</key>
+			<integer>1</integer>
+			<key>contentSelection</key>
+			<data>
+			YnBsaXN0MDDUAQIDBAUGBwpYJHZlcnNpb25ZJGFyY2hpdmVyVCR0
+			b3BYJG9iamVjdHMSAAGGoF8QD05TS2V5ZWRBcmNoaXZlctEICVRk
+			YXRhgAGtCwwZGhscHSEoLDA1OlUkbnVsbNMNDg8QFBhXTlMua2V5
+			c1pOUy5vYmplY3RzViRjbGFzc6MREhOAAoADgASjFRYXgAWABoAI
+			gAxUdHlwZVRyb3dzVGtleXNfECZTZWxlY3Rpb25EZXRhaWxUeXBl
+			UHJpbWFyeUtleWVkRGV0YWlsc9MNDg8eHyCgoIAH0iIjJCVaJGNs
+			YXNzbmFtZVgkY2xhc3Nlc18QE05TTXV0YWJsZURpY3Rpb25hcnmj
+			JCYnXE5TRGljdGlvbmFyeVhOU09iamVjdNIODykroSqACYAL0g8t
+			Li9ZTlMuc3RyaW5ngApSaWTSIiMxMl8QD05TTXV0YWJsZVN0cmlu
+			Z6MxMzRYTlNTdHJpbmdYTlNPYmplY3TSIiM2N15OU011dGFibGVB
+			cnJheaM2ODlXTlNBcnJheVhOU09iamVjdNIiIyY7oiY8WE5TT2Jq
+			ZWN0AAgAEQAaACQAKQAyADcASQBMAFEAUwBhAGcAbgB2AIEAiACM
+			AI4AkACSAJYAmACaAJwAngCjAKgArQDWAN0A3gDfAOEA5gDxAPoB
+			EAEUASEBKgEvATEBMwE1AToBRAFGAUkBTgFgAWQBbQF2AXsBigGO
+			AZYBnwGkAacAAAAAAAACAQAAAAAAAAA9AAAAAAAAAAAAAAAAAAAB
+			sA==
+			</data>
+			<key>contentSortColIsAsc</key>
+			<true/>
+			<key>contentViewport</key>
+			<string>{{0, 0}, {1466, 868}}</string>
+			<key>isToolbarVisible</key>
+			<true/>
+			<key>queries</key>
+			<string>
+-- Table to store key-value config entries
+CREATE TABLE `config` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `key` varchar(128) DEFAULT NULL,
+  `value` text DEFAULT NULL,
+  `created_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- Make sure each key is unique
+ALTER TABLE `config` ADD UNIQUE (`key`);
+
+-- Insert test data
+INSERT INTO config(`key`, `value`) VALUES ("app.background.color", "#FFB6C1");
+INSERT INTO config(`key`, `value`) VALUES ("app.fun_button.text", "Test me!");
+INSERT INTO config(`key`, `value`) VALUES ("app.fun_button.url", "https://www.google.com/search?query=funny%20cats");
+
+-- Update some values
+UPDATE `config` SET `value` = "#87CEFA" WHERE `key` = "app.background.color";
+UPDATE `config` SET `value` = "Can't wait!" WHERE `key` = "app.fun_button.text";
+</string>
+			<key>table</key>
+			<string>config</string>
+			<key>view</key>
+			<string>SP_VIEW_CUSTOMQUERY</string>
+			<key>windowVerticalDividerPosition</key>
+			<real>214</real>
+		</dict>
+	</dict>
+	<key>encrypted</key>
+	<false/>
+	<key>format</key>
+	<string>connection</string>
+	<key>queryFavorites</key>
+	<array/>
+	<key>queryHistory</key>
+	<array>
+		<string>UPDATE `config` SET `value` = "Can't wait!" WHERE `key` = "app.fun_button.text"</string>
+		<string>UPDATE `config` SET `value` = "#87CEFA" WHERE `key` = "app.background.color"</string>
+		<string>INSERT INTO config(`key`, `value`) VALUES ("app.background.color", "#FFB6C1");
+INSERT INTO config(`key`, `value`) VALUES ("app.fun_button.text", "Test me!");
+INSERT INTO config(`key`, `value`) VALUES ("app.fun_button.url", "https://www.google.com/search?query=funny%20cats")</string>
+		<string>ALTER TABLE `config` ADD UNIQUE (`key`)</string>
+		<string>-- Table to store key-value config entries
+CREATE TABLE `config` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `key` varchar(128) DEFAULT NULL,
+  `value` text DEFAULT NULL,
+  `created_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4</string>
+		<string>-- Table to store key-value config entries
+CREATE TABLE `config` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `key` varchar(128) DEFAULT NULL,
+  `value` text DEFAULT NULL,
+  `created_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4</string>
+		<string>-- Table to store key-value config entries
+CREATE TABLE `config` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `key` varchar(128) DEFAULT NULL,
+  `value` text DEFAULT NULL,
+  `created_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4</string>
+		<string>INSERT INTO config(`key`, `value`) VALUES ("test_key", "test_value")</string>
+		<string>-- INSERT INTO config(`key`, `value`) VALUES ("test_key", "test_value")
+
+ALTER TABLE `config` ADD UNIQUE (`key`)</string>
+		<string>INSERT INTO config VALUES ("test_key", "test_value")</string>
+		<string>INSERT INTO config (key, value) VALUES ("test_key", "test_value")</string>
+		<string>INSERT INTO config(key, value) VALUES ("test_key", "test_value")</string>
+		<string>INSERT INTO config("key", "value") VALUES ("test_key", "test_value")</string>
+		<string>CREATE TABLE `config` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `key` varchar(128) DEFAULT NULL,
+  `value` text DEFAULT NULL,
+  `created_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP ,
+--   `updated_at` DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4</string>
+		<string>CREATE TABLE `config` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `key` varchar(128) DEFAULT NULL,
+  `value` text DEFAULT NULL,
+--   `created_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP ,
+--   `updated_at` DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4</string>
+		<string>CREATE TABLE `config` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `key` varchar(128) DEFAULT NULL,
+  `value` text DEFAULT NULL,
+  `created_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP ,
+  `updated_at` DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4</string>
+	</array>
+	<key>rdbms_type</key>
+	<string>mysql</string>
+	<key>rdbms_version</key>
+	<string>5.5.5-10.5.6-MariaDB</string>
+	<key>version</key>
+	<integer>1</integer>
+</dict>
+</plist>

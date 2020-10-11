@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		904087E225338BC60040B512 /* ConfigService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 904087E125338BC60040B512 /* ConfigService.swift */; };
+		904087EA25338D910040B512 /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 904087E925338D910040B512 /* ContentViewModel.swift */; };
 		905313F225333218003C7B27 /* BasicConfigClientApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 905313F125333218003C7B27 /* BasicConfigClientApp.swift */; };
 		905313F425333218003C7B27 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 905313F325333218003C7B27 /* ContentView.swift */; };
 		905313F625333219003C7B27 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 905313F525333219003C7B27 /* Assets.xcassets */; };
@@ -33,6 +35,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		904087E125338BC60040B512 /* ConfigService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigService.swift; sourceTree = "<group>"; };
+		904087E925338D910040B512 /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
 		905313EE25333218003C7B27 /* BasicConfigClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BasicConfigClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		905313F125333218003C7B27 /* BasicConfigClientApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicConfigClientApp.swift; sourceTree = "<group>"; };
 		905313F325333218003C7B27 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -95,8 +99,10 @@
 		905313F025333218003C7B27 /* BasicConfigClient */ = {
 			isa = PBXGroup;
 			children = (
+				904087E125338BC60040B512 /* ConfigService.swift */,
 				905313F125333218003C7B27 /* BasicConfigClientApp.swift */,
 				905313F325333218003C7B27 /* ContentView.swift */,
+				904087E925338D910040B512 /* ContentViewModel.swift */,
 				905313F525333219003C7B27 /* Assets.xcassets */,
 				905313FA25333219003C7B27 /* Info.plist */,
 				905313F725333219003C7B27 /* Preview Content */,
@@ -259,6 +265,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				904087EA25338D910040B512 /* ContentViewModel.swift in Sources */,
+				904087E225338BC60040B512 /* ConfigService.swift in Sources */,
 				905313F425333218003C7B27 /* ContentView.swift in Sources */,
 				905313F225333218003C7B27 /* BasicConfigClientApp.swift in Sources */,
 			);

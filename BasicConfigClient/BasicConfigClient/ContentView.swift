@@ -8,9 +8,9 @@
 import SwiftUI
 
 struct ContentView: View {
+    @ObservedObject var model = ContentViewModel()
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        Link(model.buttonText, destination: model.buttonURL)
     }
 }
 
