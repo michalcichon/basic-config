@@ -11,7 +11,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 // simple route
 app.get("/", (req, res) => {
-  res.json({ message: "Welcome to basic config application." });
+  res.json({ message: "Welcome to basic config server." });
 });
 
 // routes
