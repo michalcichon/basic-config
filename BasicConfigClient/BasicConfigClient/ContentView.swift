@@ -10,7 +10,11 @@ import SwiftUI
 struct ContentView: View {
     @ObservedObject var model = ContentViewModel()
     var body: some View {
-        Link(model.buttonText, destination: model.buttonURL)
+        ZStack {
+            Color(model.backgroundColor).ignoresSafeArea()
+            Link(model.buttonText, destination: model.buttonURL)
+        }
+        
     }
 }
 
