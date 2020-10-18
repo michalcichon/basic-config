@@ -31,4 +31,16 @@ Config.getAll = result => {
     });
 };
 
+Config.getAfter = (timestamp, result) => {
+    sql.query(`SELECT * FROM config WHERE updated_at > STR_TO_DATE('${timestamp}', '%Y-%m-%dT%H:%i:%s%.%#Z')`, (err, res) => {
+        if (err) {
+            console.log("error: ", err);
+            result(null, err);
+            return;
+        }
+        console.log("configs: ", res);
+        result(null, res);
+    });
+};
+
 module.exports = Config;

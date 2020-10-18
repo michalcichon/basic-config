@@ -39,3 +39,20 @@ exports.findAll = (req, res) => {
         else res.send(data);
     });
 };
+
+// Retrieve Configs from the database after given timestamp.
+exports.findAfter = (req, res) => {
+    Config.getAfter(req.params.timestamp, (err, data) => {
+        if (err) {
+            if (err.kind === "not_found") {
+                res.status(404).send({
+                    message: `Not found Config after timestamp ${req.params.timestamp}.`
+            });
+            } else {
+                res.status(500).send({
+                    message: "Error retrieving Configs after timestamp " + req.params.timestamp
+                });
+            }
+        } else res.send(data);
+      });
+};
