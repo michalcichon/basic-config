@@ -15,6 +15,7 @@
 		905313F925333219003C7B27 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 905313F825333219003C7B27 /* Preview Assets.xcassets */; };
 		9053140425333219003C7B27 /* BasicConfigClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9053140325333219003C7B27 /* BasicConfigClientTests.swift */; };
 		9053140F25333219003C7B27 /* BasicConfigClientUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9053140E25333219003C7B27 /* BasicConfigClientUITests.swift */; };
+		906D69C1253CB0E900264EBF /* UIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 906D69C0253CB0E900264EBF /* UIColor+Hex.swift */; };
 		90D1DE24253CA28200E1AB09 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D1DE23253CA28200E1AB09 /* Config.swift */; };
 		90D1DE2D253CA47700E1AB09 /* Formatter+ExtendedISO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D1DE2C253CA47700E1AB09 /* Formatter+ExtendedISO.swift */; };
 /* End PBXBuildFile section */
@@ -51,6 +52,7 @@
 		9053140A25333219003C7B27 /* BasicConfigClientUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BasicConfigClientUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9053140E25333219003C7B27 /* BasicConfigClientUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicConfigClientUITests.swift; sourceTree = "<group>"; };
 		9053141025333219003C7B27 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		906D69C0253CB0E900264EBF /* UIColor+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Hex.swift"; sourceTree = "<group>"; };
 		90D1DE23253CA28200E1AB09 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		90D1DE2C253CA47700E1AB09 /* Formatter+ExtendedISO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Formatter+ExtendedISO.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -154,6 +156,7 @@
 			isa = PBXGroup;
 			children = (
 				90D1DE2C253CA47700E1AB09 /* Formatter+ExtendedISO.swift */,
+				906D69C0253CB0E900264EBF /* UIColor+Hex.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -295,6 +298,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				906D69C1253CB0E900264EBF /* UIColor+Hex.swift in Sources */,
 				904087EA25338D910040B512 /* ContentViewModel.swift in Sources */,
 				904087E225338BC60040B512 /* ConfigService.swift in Sources */,
 				90D1DE24253CA28200E1AB09 /* Config.swift in Sources */,

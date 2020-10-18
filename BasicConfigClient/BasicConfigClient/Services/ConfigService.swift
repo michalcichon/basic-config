@@ -34,11 +34,13 @@ class ConfigService {
     }
     
     func url(key: String, defaultValue: URL) -> URL {
-        return defaults.url(forKey: key) ?? defaultValue
+        guard let string = defaults.string(forKey: key) else { return defaultValue }
+        return URL(string: string) ?? defaultValue
     }
     
     func color(key: String, defaultValue: UIColor) -> UIColor {
-        return defaults.object(forKey: key) as? UIColor ?? defaultValue
+        guard let string = defaults.string(forKey: key) else { return defaultValue }
+        return UIColor(hexString: string) ?? defaultValue
     }
     
     // MARK: - Fetch data
