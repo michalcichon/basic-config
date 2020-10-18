@@ -15,6 +15,8 @@
 		905313F925333219003C7B27 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 905313F825333219003C7B27 /* Preview Assets.xcassets */; };
 		9053140425333219003C7B27 /* BasicConfigClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9053140325333219003C7B27 /* BasicConfigClientTests.swift */; };
 		9053140F25333219003C7B27 /* BasicConfigClientUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9053140E25333219003C7B27 /* BasicConfigClientUITests.swift */; };
+		90D1DE24253CA28200E1AB09 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D1DE23253CA28200E1AB09 /* Config.swift */; };
+		90D1DE2D253CA47700E1AB09 /* Formatter+ExtendedISO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D1DE2C253CA47700E1AB09 /* Formatter+ExtendedISO.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,8 @@
 		9053140A25333219003C7B27 /* BasicConfigClientUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BasicConfigClientUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9053140E25333219003C7B27 /* BasicConfigClientUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicConfigClientUITests.swift; sourceTree = "<group>"; };
 		9053141025333219003C7B27 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		90D1DE23253CA28200E1AB09 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
+		90D1DE2C253CA47700E1AB09 /* Formatter+ExtendedISO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Formatter+ExtendedISO.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,7 +103,9 @@
 		905313F025333218003C7B27 /* BasicConfigClient */ = {
 			isa = PBXGroup;
 			children = (
-				904087E125338BC60040B512 /* ConfigService.swift */,
+				90D1DE34253CAC4700E1AB09 /* Services */,
+				90D1DE2B253CA46100E1AB09 /* Extensions */,
+				90D1DE22253CA26F00E1AB09 /* Models */,
 				905313F125333218003C7B27 /* BasicConfigClientApp.swift */,
 				905313F325333218003C7B27 /* ContentView.swift */,
 				904087E925338D910040B512 /* ContentViewModel.swift */,
@@ -134,6 +140,30 @@
 				9053141025333219003C7B27 /* Info.plist */,
 			);
 			path = BasicConfigClientUITests;
+			sourceTree = "<group>";
+		};
+		90D1DE22253CA26F00E1AB09 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				90D1DE23253CA28200E1AB09 /* Config.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		90D1DE2B253CA46100E1AB09 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				90D1DE2C253CA47700E1AB09 /* Formatter+ExtendedISO.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		90D1DE34253CAC4700E1AB09 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				904087E125338BC60040B512 /* ConfigService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -267,8 +297,10 @@
 			files = (
 				904087EA25338D910040B512 /* ContentViewModel.swift in Sources */,
 				904087E225338BC60040B512 /* ConfigService.swift in Sources */,
+				90D1DE24253CA28200E1AB09 /* Config.swift in Sources */,
 				905313F425333218003C7B27 /* ContentView.swift in Sources */,
 				905313F225333218003C7B27 /* BasicConfigClientApp.swift in Sources */,
+				90D1DE2D253CA47700E1AB09 /* Formatter+ExtendedISO.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
