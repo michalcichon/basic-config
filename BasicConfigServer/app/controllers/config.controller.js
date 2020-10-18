@@ -13,8 +13,8 @@ exports.create = (req, res) => {
 
     // Create a Config
     const config = new Config({
-        email: req.body.key,
-        name: req.body.value,
+        key: req.body.key,
+        value: req.body.value,
     });
 
     // Save Config in the database
