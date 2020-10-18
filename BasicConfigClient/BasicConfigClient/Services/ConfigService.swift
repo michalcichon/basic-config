@@ -15,6 +15,13 @@ class ConfigService {
     private let defaults: UserDefaults
     private let notificationCenter: NotificationCenter
     
+    private var timestamp: Date? {
+        get { defaults.object(forKey: Constants.timestampKey) as? Date }
+        set { defaults.setValue(newValue, forKey: Constants.timestampKey) }
+    }
+    
+    // MARK: - Init
+    
     convenience init() {
         let serverUrl = Constants.configServerUrl
         let defaults = UserDefaults.standard
@@ -28,6 +35,8 @@ class ConfigService {
         self.notificationCenter = notificationCenter
         fetchConfig()
     }
+    
+    // MARK: - Getters
     
     func string(key: String, defaultValue: String) -> String {
         return defaults.string(forKey: key) ?? defaultValue
@@ -48,7 +57,7 @@ class ConfigService {
     private func fetchConfig() {
         let baseUrl = URL(string: serverUrl)!
         let url: URL
-        if let timestamp = Constants.timestamp {
+        if let timestamp = timestamp {
             url = baseUrl.appendingPathComponent(DateFormatter.iso8601withFractionalSeconds.string(from: timestamp))
         } else {
             url = baseUrl
@@ -79,6 +88,9 @@ class ConfigService {
             defaults.setValue(config.value, forKey: config.key)
         }
         
+        if let lastTimestamp = configs.map({ $0.updated_at }).max() {
+            timestamp = lastTimestamp
+        }
         notify()
     }
     
@@ -93,7 +105,7 @@ class ConfigService {
 fileprivate extension ConfigService {
     struct Constants {
         static let configServerUrl = "http://localhost:3000/config"
-        static var timestamp: Date? { UserDefaults.standard.object(forKey: "last_timestamp") as? Date }
+        static let timestampKey = "last_timestamp"
     }
 }
 
